@@ -8,27 +8,31 @@
 </head>
 <body>
     
-    <section class="home">
+    <section class="home" id="home">
         <nav class="navbar">
             <div class="logo">
                 <img src="./assets/logo-abouther.png" />
                 <p class="logo">AboutHer</p>
             </div>
-            <ul>
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+            <ul class="nav-links">
                 <a href="#"><li>Home</li></a>
-                <a href="#"><li>Sobre</li></a>
-                <a href="#"><li>Categorias</li></a>
+                <a href="#sobre"><li>Sobre</li></a>
+                <a href="#categorias"><li>Categorias</li></a>
             </ul>
         </nav>
 
         <main class="principal">
             <h1>AboutHer</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a class="btn" href="#">Continuar</a>
+            <!--
+            <a class="btn" href="#sobre">Continuar</a>
+            -->
+            <a href="#sobre"><img src="./assets/icones/seta-baixo.png" class="setaBaixo"/></a>
         </main>
     </section>
 
-    <section class="sobre">
+    <section class="sobre" id="sobre">
         <div class="info">
             <div class="info-text">
                 <h2>Acompanhe o esporte <br> feminino</h2>
@@ -39,58 +43,93 @@
         </div>
     </section>
 
-    <section class="categorias">
+    <section class="categorias" id="categorias">
         <h2>Nossas categorias</h2>
         <div class="esportes">
-            <div class="card">
-                <img src="./assets/icones/futebol.png" />
-                <p>Futebol</p>
-                <img src="./assets/icones/seta-direita.png" class="seta" />
-            </div>
-            <div class="card">
-                <img src="./assets/icones/volei.png" />
-                <p>Vôlei</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/basquete.png" />
-                <p>Basquete</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/luta.png" />
-                <p>Luta</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/atletismo.png" />
-                <p>Atletismo</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/skate.png" />
-                <p>Skate</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/tenis.png" />
-                <p>Tênis</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/handebol.png" />
-                <p>Handebol</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/ginastica.png" />
-                <p>Ginástica</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/surf.png" />
-                <p>Surf</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/futevolei.png" />
-                <p>Futevôlei</p>
-            </div>
-            <div class="card">
-                <img src="./assets/icones/outros.png" />
-                <p>Outros</p>
-            </div>
+            <a href="./jogos.html" id="futebol">
+                <div class="card">
+                    <img src="./assets/icones/futebol.png" />
+                    <p>Futebol</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="volei">
+                <div class="card">
+                    <img src="./assets/icones/volei.png" />
+                    <p>Vôlei</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="basquete">
+                <div class="card">
+                    <img src="./assets/icones/basquete.png" />
+                    <p>Basquete</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="luta">
+                <div class="card">
+                    <img src="./assets/icones/luta.png" />
+                    <p>Luta</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="atletismo">
+                <div class="card">
+                    <img src="./assets/icones/atletismo.png" />
+                    <p>Atletismo</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="skate">
+                <div class="card">
+                    <img src="./assets/icones/skate.png" />
+                    <p>Skate</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="tenis">
+                <div class="card">
+                    <img src="./assets/icones/tenis.png" />
+                    <p>Tênis</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="handebol">
+                <div class="card">
+                    <img src="./assets/icones/handebol.png" />
+                    <p>Handebol</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="ginastica">
+                <div class="card">
+                    <img src="./assets/icones/ginastica.png" />
+                    <p>Ginástica</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="surf">
+                <div class="card">
+                    <img src="./assets/icones/surf.png" />
+                    <p>Surf</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="futevolei">
+                <div class="card">
+                    <img src="./assets/icones/futevolei.png" />
+                    <p>Futevôlei</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
+            <a href="./jogos.html" id="outros">
+                <div class="card">
+                    <img src="./assets/icones/outros.png" />
+                    <p>Outros</p>
+                    <img src="./assets/icones/seta-direita.png" class="seta" />
+                </div>
+            </a>
         </div>
     </section>
 
