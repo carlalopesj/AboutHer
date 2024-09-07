@@ -18,50 +18,77 @@
   height: 95vh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* BARRA DE NAVEGAÇÃO */
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 3rem;
+  padding: 2rem;
+  gap: 8rem;
 }
 
-.navbar ul {
+.nav-links {
   display: flex;
   gap: 3rem;
 }
 
 .navbar a {
-  color: white;
-  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.navbar a {
+  display: inline-block;
+  padding-bottom:2px;
+  background-image: linear-gradient(#f0e9f3 0 0);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s; /*change after the size immediately*/
+}
+
+.navbar a:hover {
+  background-position: 100% 100%; /*OR bottom right*/
+  background-size: 100% 2px;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo img {
-  width: 5rem;
+  width: 4rem;
 }
 
 .logo p {
   color: white;
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
+/* PARTE PRINCIPAL DA HOME */
 .principal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 6.5rem;
   color: white;
 }
 
 .principal h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: 600;
 }
 
@@ -72,24 +99,45 @@
   font-style: italic;
 }
 
-.principal a {
-  color:rgb(96, 36, 151);
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
 .btn {
   margin-top: 5rem;
   background-color: rgb(255, 255, 255);
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 0.8rem;
   cursor: pointer;
   transition: 0.7s;
+  width: 10%;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.36);
 }
 
 .btn:hover {
   background-color: rebeccapurple;
   color: white;
+}
+
+.setaBaixo{
+  width: 5rem;
+  background-image: url("setaDown.png");
+  background-size: contain;
+  position: absolute;
+  position: relative;
+  margin-top: 5rem;
+
+  animation-name: setaBaixo;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes setaBaixo{
+  0%{
+      top: 0px;
+  }
+  100%{
+      top: 20px;
+  }
 }
 
 /*------------------------------  SOBRE NÓS  --------------------------------*/
@@ -100,7 +148,7 @@
 }
 
 .info {
-  margin-top: 10rem;
+  margin-top: 8rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -136,43 +184,65 @@
   background-color: #090C43;
   width: 20%;
   margin-top: -5px;
+  font-weight: 600;
 }
 
 /*-------------------------------  CATEGORIAS  -------------------------------*/
 
+.categorias {
+  background-color: #090C43;
+}
+
 .categorias h2 {
   margin-top: 5rem;
+  padding-top: 2rem;
   text-align: center;
   font-size: 2.6rem;
   color: #090C43;
+  color: white;
+  font-weight: 400;
 }
 
 .esportes {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.4rem;
   margin-left: 8rem;
   margin-right: 8rem;
+  padding: 2rem;
+  padding-bottom: 3.8rem;
+  border-radius: 1rem;
 }
 
 
 .card {
-  background-color: #cacaca;
   background: rgb(91,50,94);
   background: linear-gradient(122deg, rgba(91,50,94,1) 0%, rgba(70,60,112,1) 50%, rgba(76,65,164,1) 100%);
+  background-color: white;
   color: white;
   border-radius: 0.8rem;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between; 
   align-items: center;
+  cursor: pointer;
+  min-height: 4rem;
+  max-height: 4rem;
+  padding: 0 1rem; 
+
+  -webkit-box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.36);
+  -moz-box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.36);
+  box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.36);
+}
+
+.card:hover {
+  border: 1px solid white;
 }
 
 .card img {
   border-radius: 0.5rem;
   width: 4rem;
   padding: 0.8rem;
-  margin-left: 1rem;
 }
 
 .card p {
@@ -184,9 +254,7 @@
 
 .card .seta {
   width: 3rem;
-  margin-left: 12rem;
 }
-
 
 /*-------------------------------  FOOTER  -------------------------------*/
 
@@ -195,8 +263,138 @@ footer .logo{
   flex-direction: column;
   margin-top: 5rem;
   background-color: #090C43;
+  background: rgb(66, 36, 68);
+  background: linear-gradient(122deg, rgb(66, 36, 68) 0%, rgb(51, 42, 85) 50%, rgb(19, 13, 59) 100%);
   color: white;
   text-align: center;
-  padding: 2rem;
-  font-size: 0.2rem;
+  padding: 1.2rem;
 }
+
+footer .logo p {
+  font-size: 1rem;
+}
+
+/*-------------------------------  RESPONSIVO  -------------------------------*/
+
+.menu-btn {
+  display: none;
+}
+
+
+
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+  
+  /*Home e Barra de navegação*/
+  .home {
+    height: 85vh;
+  }
+
+  .logo img, .logo p {
+    width: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .principal h1 {
+    font-size: 5rem;
+  }
+
+  .principal p {
+    margin-top: 2px;
+    font-size: 0.8rem;
+  }
+
+  .setaBaixo {
+    width: 3rem;
+  }
+
+  .menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    width: 100%;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /*Sobre*/
+  .info {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .info img {
+    width: 25rem;
+    margin: 0 auto;
+    margin-left: 0;
+  }
+  
+  .info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: justify;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .info-text h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  
+  .info a {
+    width: 30%;
+  }
+
+  /*Categorias*/
+  .categorias h2 {
+    font-size: 2.2rem;
+  }
+  
+  .esportes {
+    margin-top: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .card img {
+    padding: 0.8rem;
+  }
+  
+  .card .seta {
+    width: 3rem;
+  }
+  
+}
+
+
+
+
