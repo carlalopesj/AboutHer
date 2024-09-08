@@ -15,6 +15,7 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
+// Trocando palavras de inspiração
 const words = ['Inspiração', 'Coragem', 'Determinação', 'Superação', 'Força', 'Resiliência'];
 let wordIndex = 0;
 let letterIndex = 0;
