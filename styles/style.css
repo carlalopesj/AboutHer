@@ -146,6 +146,8 @@ html {
   display: flex;
   flex-direction: column;
   background-color: aliceblue;
+  background-color: #f0f8ff;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
 .info {
@@ -200,6 +202,7 @@ html {
 
 .categorias h2 {
   padding-top: 5rem;
+  padding-bottom: 2rem;
   text-align: center;
   font-size: 2.6rem;
   color: #090C43;
@@ -212,11 +215,11 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.4rem;
-  margin-left: 8rem;
-  margin-right: 8rem;
   padding: 2rem;
   padding-bottom: 3.8rem;
   border-radius: 1rem;
+  margin: 0 auto; /* Centraliza o grid */
+  max-width: 1200px; /* Define um limite de largura para não ocupar toda a tela */
 }
 
 
@@ -267,19 +270,35 @@ html {
 
 /*------------------------------- JUNTE SE A NÓS -------------------------*/
 .junte {
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.7rem;
-  padding: 22rem;
-  background-color: aliceblue;
+  padding: 0;  /* Remova o padding que estava aumentando a altura */
+  background-color: #f0f8ff;
   text-align: center;
   gap: 2rem;
   color: #090C43;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.4rem;
+  background-color: #f0f8ff;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
+.junte h1 {
+  margin-bottom: 1rem; /* Adicione um espaçamento abaixo do título */
+}
+
+.inspiracao {
+  font-size: 1.5rem;
+  height: 40px; /* Mantém a altura fixa para o contêiner de animação */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
 
 /*-------------------------------  FOOTER  -------------------------------*/
 
@@ -308,6 +327,7 @@ footer .logo p {
 
 
 
+/* Responsividade para telas menores */
 /* Responsividade para telas menores */
 @media screen and (max-width: 768px) {
   
@@ -398,20 +418,24 @@ footer .logo p {
 
   /*Categorias*/
   .categorias h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    padding-bottom: 3rem;
   }
   
   .esportes {
     margin-top: 1rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-left: 0;
+    margin: 0 auto; /* Centraliza o grid */
+    max-width: 90%; /* Define um limite de largura para o grid */
+    padding: 0 1rem; /* Adiciona padding para evitar que os cartões fiquem colados nas bordas */
+    padding-bottom: 3rem;
   }
 
   .card {
-    width: 10rem;
+    width: 100%; /* Ajuste a largura do cartão para ocupar o espaço disponível */
     min-height: 8rem;
-    max-height: 4rem;
+    max-height: 8rem;
   }
   
   .card img {
@@ -437,6 +461,23 @@ footer .logo p {
   footer .logo p {
     display: none;
   }
+
+  .junte {
+    height: 50vh;
+    font-size: 1rem;
+  }
   
+  .junte h1 {
+    margin-bottom: 1rem; /* Adicione um espaçamento abaixo do título */
+  }
+  
+  .inspiracao {
+    font-size: 1.5rem;
+    height: 40px; /* Mantém a altura fixa para o contêiner de animação */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+  }
 }
 

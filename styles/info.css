@@ -9,7 +9,8 @@ body {
     overflow-x: hidden;
     display: flex;
     font-family: 'Inter', sans-serif;
-    background-color: rgb(211, 211, 211);
+    background-color: #d3d3d3;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
 .imagens {
