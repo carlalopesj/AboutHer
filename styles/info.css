@@ -154,3 +154,20 @@ body {
     gap: 10px;
     align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+    .imagens {
+        display: none;
+    }
+
+    .informacao {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.2rem;
+        width: 100%;
+    }
+
+    .info {
+        width: 100vw;
+        padding: 20px;
+    }
+}
