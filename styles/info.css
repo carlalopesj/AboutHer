@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto; 
+    overflow-x: hidden;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(211, 211, 211);
+}
+
+.imagens {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30vw;
+    height: 100vh;
+    border-radius: 0 2px 2px 0;
+    position: fixed;
+    box-shadow: 1px 1px 8px 10px rgba(14, 1, 36, 0.3);
+}
+
+.imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.imagens img.active {
+    opacity: 1;
+}
+
+/* informações */
+.info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70vw;
+    min-height: 100vh; 
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto; 
+    
+}
+
+/* Título */
+.title {
+    text-align: center;
+    font-size: 30px; 
+    font-weight: bold;
+    color: #090C43;
+    margin-bottom: 50px;
+}
+
+/* Informações com colunas menores */
+.informacao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    width: 100%;
+}
+
+/* Estilização de cada quadrado de informação */
+.info-box {
+    background: rgb(91,50,94);
+    background: linear-gradient(122deg, rgba(91,50,94,1) 0%, rgba(70,60,112,1) 50%, rgba(76,65,164,1) 100%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid white;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: transform 0.3s ease, border 0.3s ease; 
+    animation: fadeInUp 1s ease forwards;
+    cursor: pointer; 
+}
+
+/* Animação para a aparência dos quadrados */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* tempo de aparição dos quadrados */
+.info-box:nth-child(1) { animation-delay: 0s; }
+.info-box:nth-child(2) { animation-delay: 0.2s; }
+.info-box:nth-child(3) { animation-delay: 0.4s; }
+.info-box:nth-child(4) { animation-delay: 0.6s; }
+.info-box:nth-child(5) { animation-delay: 0.8s; }
+.info-box:nth-child(6) { animation-delay: 1s; }
+
+.info-box:hover { 
+    border: 1px solid rgb(4, 5, 48); 
+}
+
+/* Faixa superior dos quadrados */
+.info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #1b0435;
+    border-radius: 8px 8px 0 0;
+}
+
+
+.info-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+    color: white;
+    text-align: left;
+}
+
+.info-box h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.info-box p {
+    margin: 3px 0;
+    font-size: 17px;
+    font-weight: 200;
+}
+
+.transmissao {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
