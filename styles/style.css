@@ -288,12 +288,13 @@ html {
 }
 
 .junte h1 {
-  margin-bottom: 1rem; /* Adicione um espaçamento abaixo do título */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .inspiracao {
-  font-size: 1.5rem;
-  height: 40px; /* Mantém a altura fixa para o contêiner de animação */
+  font-size: 2.5rem;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
