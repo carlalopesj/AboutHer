@@ -60,3 +60,21 @@ function typeWords() {
 
 // Inicia o efeito de digitação quando a página carregar
 document.addEventListener('DOMContentLoaded', typeWords);
+
+
+// Começando a conectar backend 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const idEsporte = 1; // Substitua pelo ID do esporte desejado
+    fetch(`http://localhost:8080/abouther/api/jogos?id=${idEsporte}`)
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector('.info').innerHTML = `
+                <h3>Jogo</h3>
+                <p>Horário: ${data.horario}</p>
+                <p>Data: ${data.data}</p>
+                <p>Local: ${data.local}</p>
+            `;
+        })
+        .catch(error => console.error('Erro:', error));
+});
