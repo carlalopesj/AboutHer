@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./styles/autenticacao.css">
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="image-container">
+    <img src="./assets/imagem3.jpeg" alt="Imagem descritiva" /> 
+  </div>
+
+  <div class="container">
+    <div class="buttonsForm">
+      <div class="btnColor"></div>
+      <button id="btnEntrar" class="active">Entrar</button>
+      <button id="btnCriar">Cadastrar</button>
+    </div>
+
+    <form id="Entrar">
+      <div class="form-container">
+        <div class="input">
+          <input type="texto" placeholder="Email" required />
+          <i class="fas fa-envelope iEmail"></i>
+        </div>
+        <div class="input">
+          <input type="password" placeholder="Senha" required />
+          <i class="fas fa-lock iSenha"></i>
+        </div>
+        <button type="botão">Entrar</button>
+      </div>
+      <!--
+      <div class="divCheck">
+        <input type="checkbox" />
+        <span>Lembrar senha</span>
+      </div>
+      -->
+    </form>
+    
+    <form id="Criar">
+      <div class="form-container">
+        <div class="input">
+          <input type="texto" class="email" placeholder="Email" required />
+          <i class="fas fa-envelope iEmail"></i>
+        </div>
+        <div class="input">
+          <input type="password" class="senha" placeholder="Senha" required />
+          <i class="fas fa-lock iSenha"></i>
+        </div>
+        <div class="input">
+          <input type="password" class="confirmSenha" placeholder="Confirmar senha" required />
+          <i class="fas fa-lock iSenha2"></i>
+        </div class="input">
+        <button type="botão">Criar conta</button>
+      </div>
+    </form>
+    <p class="avisos"></p>
+  </div>
+
+  <script src="./js/autenticacao.js"></script>
+</body>
+</html>
