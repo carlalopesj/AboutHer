@@ -40,7 +40,7 @@ const IConfirmaSenha = document.querySelector(".confirmSenha");
 const aviso = document.querySelector(".avisos");
 
 function cadastrar() {
-    fetch("http://localhost:8080/usuarios", {  
+    fetch("http://localhost:8080/usuarios/cadastrar", {  
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ function limpar() {
     IConfirmaSenha.value = "";
 }
 
-formulario.addEventListener('submit', function (event) {
+formSignup.addEventListener('submit', function (event) {
     event.preventDefault();
 
     if (ISenha.value === IConfirmaSenha.value) {
@@ -84,4 +84,46 @@ formulario.addEventListener('submit', function (event) {
             aviso.textContent = "";
         }, 2000);
     }
+});
+
+// Parte do Login
+
+const emailInput = document.querySelector(".iLoginEmail");
+const senhaInput = document.querySelector(".iLoginSenha");
+
+function login() {
+    fetch("http://localhost:8080/usuarios/login", {  // Substitua pelo seu endpoint de login
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+            email: emailInput.value,
+            senha: senhaInput.value
+        })
+    })
+    .then(function (res) {
+        if (!res.ok) {
+            throw new Error('Credenciais inválidas');
+        }
+        return res.json();
+    })
+    .then(function (data) {
+        // Login bem-sucedido, você pode redirecionar o usuário ou salvar um token
+        console.log('Login realizado com sucesso', data);
+        window.location.href = "/index.html";
+        // Exemplo de redirecionamento:
+        // window.location.href = "/dashboard.html";
+    })
+    .catch(function (error) {
+        console.error('Erro durante o login:', error);
+        // Exibir mensagem de erro para o usuário
+        alert("Email ou senha incorretos");
+    });
+}
+
+formSignin.addEventListener('submit', function (event) {
+    event.preventDefault();  // Evitar o comportamento padrão do formulário
+    login();
 });

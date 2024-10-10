@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Esporte</title>
+</head>
+<body>
+
+    <h1>Jogos</h1>
+    <div id="jogos-list"></div>
+
+    <script>
+        // Função para capturar o idEsporte da URL
+        function getIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');  // O valor do parâmetro 'id'
+        }
+
+        // Função para buscar os jogos do backend
+        async function buscarJogos() {
+            const idEsporte = getIdFromUrl();  // Captura o id do esporte
+            if (!idEsporte) {
+                alert("Esporte não encontrado!");
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:8080/jogos/${idEsporte}`);  // URL do seu backend
+                if (response.ok) {
+                    const jogos = await response.json();
+                    exibirJogos(jogos);
+                } else {
+                    alert("Erro ao buscar os jogos");
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+            }
+        }
+
+        // Função para exibir os jogos no HTML
+        function exibirJogos(jogos) {
+            const jogosList = document.getElementById('jogos-list');
+            jogos.forEach(jogo => {
+                const div = document.createElement('div');
+                div.innerHTML = `<h2>${jogo.nome}</h2><p>${jogo.descricao}</p>`;
+                jogosList.appendChild(div);
+            });
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = buscarJogos;
+    </script>
+
+</body>
+</html>
