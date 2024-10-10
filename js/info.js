@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 infoTexto.className = 'info-texto';
 
                 infoTexto.innerHTML = `
-                    <h3>${jogo.timeX} vs ${jogo.timeY}</h3>
+                    <h3>${jogo.time} vs ${jogo.time2}</h3>
                     <p>Horário: ${jogo.horario}</p>
                     <p>Data: ${jogo.data}</p>
                     <p>Local: ${jogo.local}</p>
