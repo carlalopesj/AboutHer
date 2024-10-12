@@ -40,7 +40,7 @@ const IConfirmaSenha = document.querySelector(".confirmSenha");
 const aviso = document.querySelector(".avisos");
 
 function cadastrar() {
-    fetch("http://localhost:8080/usuarios/cadastrar", {  
+    fetch("http://laudable-warmth-production.up.railway.app/usuarios/cadastrar", {  
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ const emailInput = document.querySelector(".iLoginEmail");
 const senhaInput = document.querySelector(".iLoginSenha");
 
 function login() {
-    fetch("http://localhost:8080/usuarios/login", {  // Substitua pelo seu endpoint de login
+    fetch("http://laudable-warmth-production.up.railway.app/usuarios/login", {  // Substitua pelo seu endpoint de login
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
