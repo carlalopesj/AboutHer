@@ -113,8 +113,6 @@ function login() {
         // Login bem-sucedido, você pode redirecionar o usuário ou salvar um token
         console.log('Login realizado com sucesso', data);
         window.location.href = "/index.html";
-        // Exemplo de redirecionamento:
-        // window.location.href = "/dashboard.html";
     })
     .catch(function (error) {
         console.error('Erro durante o login:', error);
