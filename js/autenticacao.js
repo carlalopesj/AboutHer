@@ -111,6 +111,7 @@ function login() {
     })
     .then(function (data) {
         // Login bem-sucedido, você pode redirecionar o usuário ou salvar um token
+        localStorage.setItem('usuarioLogado', JSON.stringify(data));
         console.log('Login realizado com sucesso', data);
         window.location.href = "/index.html";
     })
@@ -125,3 +126,4 @@ formSignin.addEventListener('submit', function (event) {
     event.preventDefault();  // Evitar o comportamento padrão do formulário
     login();
 });
+
