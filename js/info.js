@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p>Data: ${jogo.data}</p>
                     <p>Local: ${jogo.local}</p>
                     <div class="transmissao">
-                        <img src="./assets/icones/${jogo.canal}.png" alt="Canal Logo"/>
                         <p>Transmissão: ${jogo.canal}</p>
                     </div>
                 `;
