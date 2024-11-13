@@ -1,3 +1,6 @@
+
+
+
 var formSignin = document.querySelector('#Entrar');
 var formSignup = document.querySelector('#Criar');
 var btnColor = document.querySelector('.btnColor');
@@ -40,7 +43,7 @@ const IConfirmaSenha = document.querySelector(".confirmSenha");
 const aviso = document.querySelector(".avisos");
 
 function cadastrar() {
-    fetch("https://laudable-warmth-production.up.railway.app/usuarios/cadastrar", {  
+    fetch("http://localhost:8080/usuarios/cadastrar", {  
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -92,7 +95,8 @@ const emailInput = document.querySelector(".iLoginEmail");
 const senhaInput = document.querySelector(".iLoginSenha");
 
 function login() {
-    fetch("https://laudable-warmth-production.up.railway.app/usuarios/login", {  // Substitua pelo seu endpoint de login
+
+    fetch("http://localhost:8080/usuarios/login", {  
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -110,10 +114,11 @@ function login() {
         return res.json();
     })
     .then(function (data) {
-        // Login bem-sucedido, você pode redirecionar o usuário ou salvar um token
+        // Login bem-sucedido
+        window.location.href = "./index.html";
         localStorage.setItem('usuarioLogado', JSON.stringify(data));
+        loginLocal(emailInput.value);
         console.log('Login realizado com sucesso', data);
-        window.location.href = "/index.html";
     })
     .catch(function (error) {
         console.error('Erro durante o login:', error);
@@ -123,7 +128,14 @@ function login() {
 }
 
 formSignin.addEventListener('submit', function (event) {
-    event.preventDefault();  // Evitar o comportamento padrão do formulário
+    event.preventDefault();  
     login();
 });
 
+// Função de login local (simulado) e armazenamento de inicial
+function loginLocal(email) {
+    const userInitial = email.charAt(0).toUpperCase();
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userInitial', userInitial);
+    window.location.href = "index.html";
+}

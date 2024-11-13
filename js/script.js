@@ -59,8 +59,93 @@ function typeWords() {
 }
 
 // Inicia o efeito de digitação quando a página carregar
-document.addEventListener('DOMContentLoaded', typeWords);
+document.addEventListener('DOMContentLoaded', () => {
+    typeWords();
+    updateLoginState();
+    addEventListeners(); // Certifique-se de chamar esta função aqui
+});
 
 
+const userInitial = localStorage.getItem('userInitial');
+const userIcon = document.querySelector('.icone-usuario');
 
+// Exibe a inicial do usuário e oculta "Cadastrar/Entrar" após login
+window.addEventListener('DOMContentLoaded', function () {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const userInitial = localStorage.getItem('userInitial');
+    const btnCadEntrar = document.querySelector('.btn-cad');
+
+    if (isLoggedIn) {
+        btnCadEntrar.style.display = "none";
+        userIcon.textContent = userInitial;
+    }
+});
+
+// Função para atualizar o estado de login e exibir ou ocultar elementos
+function updateLoginState() {
+    const loginRegisterLink = document.querySelector('.btn-cad');
+
+    if (userInitial) {
+        userIcon.textContent = userInitial;
+        userIcon.style.display = 'flex';
+        if (loginRegisterLink) loginRegisterLink.style.display = 'none';
+    } else {
+        userIcon.style.display = 'none';
+        if (loginRegisterLink) loginRegisterLink.style.display = 'inline-block';
+    }
+}
+
+// Função para alternar visibilidade do menu2
+function toggleDropdown() {
+    console.log("Clicado")
+    const menu2 = document.querySelector('.menu2');
+    menu2.classList.toggle('show');
+}
+
+// Adiciona clique no ícone do usuário
+function addEventListeners() {
+    const userIcon = document.querySelector('.icone-usuario');
+    if (userIcon) {
+        userIcon.addEventListener('click', toggleDropdown);
+        console.log("Adicionando evento ao icone-usuario"); // Verifica se o evento é adicionado
+    }
+    
+    const logoutButton = document.querySelector('.sair-btn');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', logoutUser);
+    }
+}
+
+function logoutUser() {
+    // Remove o estado de login e a inicial do usuário do localStorage
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userInitial');
+    
+    // Atualiza a interface
+    const userIcon = document.querySelector('.icone-usuario');
+    const loginRegisterLink = document.querySelector('.btn-cad');
+
+    userIcon.style.display = 'none';
+    if (loginRegisterLink) loginRegisterLink.style.display = 'inline-block';
+    
+    // Opcional: Redirecionar para a página inicial ou de login após o logout
+    window.location.href = './autenticacao.html'; // Ajuste o caminho conforme necessário
+}
+
+// Certifique-se de adicionar o evento de clique no botão "Sair"
+document.querySelector('.sair-btn').addEventListener('click', logoutUser);
+
+
+// Menu responsivo
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+
+// Efeito de rolagem suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+});
 

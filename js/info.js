@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Esporte não encontrado!");
                 return;
             }
-    fetch(`https://laudable-warmth-production.up.railway.app/jogos/${idEsporte}`) // Substitua pela sua rota de API que retorna os jogos
+    fetch(`http://localhost:8080/jogos/${idEsporte}`) // Substitua pela sua rota de API que retorna os jogos
         .then(response => response.json())
         .then(jogos => {
             const container = document.querySelector('.informacao');
