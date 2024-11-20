@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta</title>
+  <link rel="stylesheet" href="./styles/conta.css">
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="image-container">
+    <img src="./assets/imagem3.jpeg" alt="Imagem descritiva" /> 
+  </div>
+
+  <div class="container">
+    <h1>Minha Conta</h1>
+    <p class="p-topico">Alterar Senha</p>
+    <form id="Criar">
+      <div class="form-container">
+        <div class="input">
+          <input type="password" class="senha" placeholder="Nova senha" required />
+          <i class="fas fa-lock iSenha"></i>
+        </div>
+        <div class="input senha2">
+          <input type="password" class="confirmSenha" placeholder="Confirmar senha" required />
+          <i class="fas fa-lock iSenha2"></i>
+        </div class="input">
+        <button type="botão">Salvar</button>
+      </div>
+    </form>
+    <p class="p-topico p-del">Deletar Conta</p>
+    <form id="Deletar">
+      <div class="deletar-conta">
+        <button class="btn-deletar">
+          <i class="fa-solid fa-trash" style="color: #d60a0a;"></i>
+          Deletar conta
+        </button>
+      </div>
+    </form>
+    <p class="avisos"></p>
+  </div>
+
+  <script src="./js/account.js"></script>
+</body>
+</html>

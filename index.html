@@ -14,24 +14,27 @@
                 <img src="./assets/logo-abouther.png" />
                 <p class="logo">AboutHer</p>
             </div>
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <ul class="nav-links">
-                <a href="#home"><li>Home</li></a>
-                <a href="#sobre"><li>Sobre</li></a>
-                <a href="#categorias"><li>Categorias</li></a>
-                <a href="./autenticacao.html" class="btn-cad"><li>Cadastrar/Entrar</li></a>
-            </ul>
-
-            <!-- Ícone com a inicial do usuário -->
-            <div class="icone-usuario" id="iconeUsuario">
-                <!-- Inicial do usuário será inserida via JavaScript -->
+            <div class="conteudo-nav">
+                <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+                <ul class="nav-links">
+                    <a href="#home"><li>Home</li></a>
+                    <a href="#sobre"><li>Sobre</li></a>
+                    <a href="#categorias"><li>Categorias</li></a>
+                    <a href="./autenticacao.html" class="btn-cad"><li>Cadastrar/Entrar</li></a>
+                </ul>
+    
+                <div class="icone-usuario" id="iconeUsuario">
+                    <!-- Inicial do usuário será inserida via JavaScript -->
+                </div>
             </div>
             <div class="menu2">
                 <div class="titulo">Abouther</div>
-                <button class="conta-item">
-                    <img src="./assets/icones/conta2.png" alt="Ícone de conta" class="conta-icon">
-                    Minha conta
-                </button>
+                <a href="./conta.html">
+                    <button class="conta-item">
+                        <img src="./assets/icones/conta2.png" alt="Ícone de conta" class="conta-icon">
+                        Minha conta
+                    </button>
+                </a>
                 <a href="./favoritos.html?id">
                     <button class="favoritar-btn">
                         <img src="./assets/icones/favorito2.png" alt="Ícone de favoritar" class="favorito-icon">

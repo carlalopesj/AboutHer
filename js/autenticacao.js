@@ -1,6 +1,3 @@
-
-
-
 var formSignin = document.querySelector('#Entrar');
 var formSignup = document.querySelector('#Criar');
 var btnColor = document.querySelector('.btnColor');
