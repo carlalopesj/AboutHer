@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    /*
     fetch(`http://localhost:8080/usuarios/${usuarioId}`)
         .then(response => response.json())
         .then(favoritos => {
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error('Erro ao buscar os jogos:', error));
+        */
 });
 
 // Função de editar senha
@@ -121,14 +123,37 @@ function deletar() {
             return res.json();
         })
         .then(function (data) {
-            console.log(data);
-            aviso.style.color='green';
-            aviso.textContent = "Senha alterada com sucesso!"
-            setTimeout(() => {
-                aviso.textContent = '';
-            }, 3000);
+            console.log("Deletado " + data);
+            window.location.href = "./autenticacao.html";
         })
         .catch(function (error) {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+
+formularioDeletar.addEventListener('submit', function (event) {
+    event.preventDefault();  
+    deletar();
+});
+
+// Modal para confirmar deletar conta
+const modal = document.getElementById('modal-confirmar');
+const openModalButton = document.getElementById('open-modal');
+const confirmarButton = document.getElementById('confirmar-deletar');
+const cancelarButton = document.getElementById('cancelar-deletar');
+
+// Abre o modal ao clicar no botão "Deletar conta"
+openModalButton.addEventListener('click', function () {
+    modal.style.display = 'flex'; // Exibe o modal
+});
+
+// Fecha o modal ao clicar em "Cancelar"
+cancelarButton.addEventListener('click', function () {
+    modal.style.display = 'none'; // Esconde o modal
+});
+
+// Confirma a exclusão ao clicar em "Sim"
+confirmarButton.addEventListener('click', function () {
+    modal.style.display = 'none'; 
+    deletar(); 
+});

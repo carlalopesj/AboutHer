@@ -120,7 +120,11 @@ function login() {
     .catch(function (error) {
         console.error('Erro durante o login:', error);
         // Exibir mensagem de erro para o usuário
-        alert("Email ou senha incorretos");
+        aviso.style.color='red';
+        aviso.textContent = "Email ou senha incorretos!"
+        setTimeout(() => {
+            aviso.textContent = '';
+        }, 3000);
     });
 }
 

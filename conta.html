@@ -14,7 +14,10 @@
   </div>
 
   <div class="container">
-    <h1>Minha Conta</h1>
+    <div class="header">
+      <a href="./index.html"><img src="./assets/icones/seta-esquerda.png"></a>
+      <h1>Minha Conta</h1>
+    </div>
     <p class="p-topico">Alterar Senha</p>
     <form id="Criar">
       <div class="form-container">
@@ -32,13 +35,24 @@
     <p class="p-topico p-del">Deletar Conta</p>
     <form id="Deletar">
       <div class="deletar-conta">
-        <button class="btn-deletar">
-          <i class="fa-solid fa-trash" style="color: #d60a0a;"></i>
+        <button class="btn-deletar" id="open-modal">
+          <img src="./assets/icones/delete-icon.png">
           Deletar conta
         </button>
       </div>
     </form>
     <p class="avisos"></p>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal-confirmar" class="modal">
+      <div class="modal-content">
+        <p>Tem certeza de que deseja deletar sua conta?</p>
+        <div class="modal-actions">
+          <button id="confirmar-deletar" class="btn-confirm">Deletar</button>
+          <button id="cancelar-deletar" class="btn-cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="./js/account.js"></script>
