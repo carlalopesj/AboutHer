@@ -13,4 +13,4 @@ Para ver mais do BackEnd, veja o outro repositório: https://github.com/carlalop
 
 Spoiler do resultado:
 
-![abouther-home](https://github.com/user-attachments/assets/b2979952-9950-40d4-8792-80560a695b6e)
+![inicio-abouther](https://github.com/user-attachments/assets/24cb152c-33ac-4499-886d-4b005b664565)
