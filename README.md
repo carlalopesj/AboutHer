@@ -7,6 +7,9 @@ Este projeto propõe a criação de uma plataforma digital destinada a destacar 
 
 Deploy: https://aboutherr.netlify.app/
 
+Neste repositório, você encontra toda a codifição do FrontEnd e parte da integração com o BackEnd.
+
+Para ver mais do BackEnd, veja o outro repositório: https://github.com/carlalopesj/backend-abouther 
 
 Spoiler do resultado:
 
