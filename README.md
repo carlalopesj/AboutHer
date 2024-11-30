@@ -11,6 +11,8 @@ Neste repositório, você encontra toda a codifição do FrontEnd e parte da int
 
 Para ver mais do BackEnd, veja o outro repositório: https://github.com/carlalopesj/backend-abouther 
 
+Acesse também nosso slide de apresentação: [Abouther - Apresentação Final.pdf](https://github.com/user-attachments/files/17967331/Abouther.-.Apresentacao.Final.pdf)
+
 Spoiler do resultado:
 
 ![inicio-abouther](https://github.com/user-attachments/assets/24cb152c-33ac-4499-886d-4b005b664565)
